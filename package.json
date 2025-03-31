@@ -1,0 +1,18 @@
+{
+  "name": "cicd-harness",
+  "module": "src/index.ts",
+  "type": "module",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bun-plugin-dts": "^0.3.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "yaml": "^2.7.0"
+  },
+  "author": "Liam Johnston",
+  "types": "./dist/index.d.ts"
+}

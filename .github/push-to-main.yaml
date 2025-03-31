@@ -1,0 +1,29 @@
+name: Push to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  bump-version:
+   name: Bump Action Version
+   runs-on: ubuntu-latest
+
+   steps:
+    - name: Checkout
+      id: checkout
+      uses: actions/checkout@v4
+
+    - name: Git config
+      run: |
+        git config user.name actions-bot
+        git config user.email actions-bot@users.noreply.github.com
+
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v2
+
+    - name: Bump Version
+      run: |
+        bunx commit-and-tag-version@12.5.0
+        git push --follow-tags origin main
