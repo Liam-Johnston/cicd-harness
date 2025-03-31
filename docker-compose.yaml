@@ -1,6 +1,6 @@
 services:
   bun:
-    image: oven/bun:1.2-alpine
+    image: oven/bun:1.2
     volumes:
       - ./:/project
     working_dir: /project
