@@ -1,0 +1,19 @@
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  build-and-publish:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: Build Package
+        run: make build
+
+# TODO: publish to NPM
